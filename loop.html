@@ -1,5 +1,204 @@
- <div style="width:100% "th:each="item,status: ${fourfile}"  th:switch="${item.worktype}">
-	               
+<div class="row " >
+		<div class="col-sm-2">
+		
+		</div>
+			<div class="col-sm-8 row  topheaded" id="imagev" >
+					<div class="col-sm-11">
+					<h1 id="topheadername" th:text="${name}">MBSTU PREMIAR LEDGE</h1>
+					</div>
+					<div class="col-sm-1 righttop">
+					 <i class='fas fa-ellipsis-v' style='font-size:24px;color:black;margin-top:20px;margin-left:60px;' data-bs-toggle="modal" data-bs-target="#myModal"></i>
+					</div>
+					
+					
+					
+			</div>
+			<div class="col-sm-2"></div>
+	</div>
+	
+<div class="row "  >
+    <div class="col-sm-1"></div>
+	 <div class="col-sm-11 row  "   >
+				<div class="col-sm-3 lefthead" style="border:1px solid gray" >
+					<div style="border:1px solid gray;padding:20px;color:black;background-color:white;margin-bottom:50px;" id="turnoffdiv" >
+						<div class="row">
+							<div class="col-sm-10">
+							<p>Class Code</p>
+							</div>
+							<div class="col-sm-2" style="text-align:right">
+								 <div class="dropdown" id="turnoffdiv" >
+							      <i class='fas fa-ellipsis-v dropbtn '  style='font-size:24px;' data-bs-toggle="modal" data-bs-target="#myModal"></i>
+								  <div class="dropdown-content" style="text-align:left; width:250px;">
+								   <p  onclick="copyEvent('copy')" id="copy">
+							       <img th:src="@{/image/link.png}" style="width:26px;height:26px;" class="rounded-circle inputimg" >
+							        Copy invite link <span th:text="${invitelink}"></span>
+							      </p>
+							      
+							       <p  onclick="copyEvent('copyc')" >
+							       <i class="fa fa-copy" style="font-size:26px;margin-right:10px;"></i>Copy Class Code<span id="copyc"  th:text="${classcode}"></span>
+							      </p>
+							      <form th:action="@{/reset}" method="post">
+							      <input type="text" th:value="${useremail}" style="display:none" name="useremail"  th:id="useremail" />
+							      <input type="password" th:value="${userpassword}" style="display:none" name="userpassword" th:id="userpassword" />
+							       <button type="submit" ><img th:src="@{/image/reset.png}" style="width:26px;height:26px;margin-right:10px;" class="rounded-circle inputimg"  alt="Cinque Terre" >Reset Class Code</button>
+							      </form>
+								    <p id="turnoff"><i class="fa fa-power-off" style="font-size:26px;margin-right:10px;"></i>Turn Off</p>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+							 <p><span th:text="${classcode}"></span></p>
+							</div>
+							<div class="col-sm-6" style="text-align:left">
+								<i class='fas fa-expand' style='font-size:26px'  data-bs-toggle="modal" data-bs-target="#myModal"></i>
+								<div class="modal" id="myModal" style="text-align:center">
+								  <div class="modal-dialog "  style="width:600px;">
+								    <div class="modal-content" >
+								      <!-- Modal body -->
+								      <div class="modal-body" >
+								      <div class="row">
+										<div class="col-sm-10"></div>
+								      	<div class="col-sm-2" style="text-align:right">
+								      	 <i class="fa fa-remove" style="font-size:24px;margin-top:1px;" data-bs-dismiss="modal"></i>
+								      	</div>
+								      </div>
+								      <div class="row">
+										<div class="col-sm-12" style="padding-bottom:20px;border-bottom:1px solid gray;">
+										<h3><span th:text="${classcode}"></span></h3>
+										</div>
+								      	
+								      </div>
+								      <div class="row">
+								      	<div class="col-sm-6">
+								      		 <ul class="nav">
+												  <li class="nav-item">
+												    <a class="nav-link" href="#">Saddamnvn</a>
+												  </li>
+												  <li class="nav-item">
+												    <a class="nav-link" href="#">Private</a>
+												  </li>
+											</ul>
+								      	</div>
+								      	<div class="col-sm-6">
+								      		 <ul class="nav   justify-content-end">
+												  <li class="nav-item">
+												    
+													     <p  onclick="copyEvent('copxy')" id="copxy">
+												        <i class="fa fa-file-o" style="font-size:26px"    data-bs-toggle="modal" data-bs-target="#myModal" ></i>
+												        Copy invite link <span th:text="${invitelink}"></span>
+												      	</p>
+												      
+												  
+												  </li>
+												  <li class="nav-item">
+												    <p  style="display:none;">This is the copy string!</p>
+												
+												
+												  </li>
+											</ul>
+								      	</div>
+								      </div>
+								      <div th:class="modalclose"> <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button></div>
+								      
+								      </div>
+								
+								    </div>
+								  </div>
+								</div>
+									
+							</div>
+						</div>
+					
+		
+					</div>
+					
+					<div style="border:1px solid gray;padding:20px;color:black;background-color:white;">
+						<p>UpComing <br>No work due Soon</p>
+						<a href="#" >View All</a>
+					</div>
+			
+			   </div>
+			    <div class="col-sm-7" >
+			          <div class="headpaert"  >
+					    <div id="announce" class="row"style="margin-top:50px;border:1px solid gray;padding-top:5px;padding-bottom:5px;border-radius:10px" >
+						   <div class="col-sm-10 row" >
+								<div class="col-sm-3">
+									<a target="#" href="#">
+					   			 	<img th:src="@{/image/frnd.jpg}" style="margin-left:30px" class="rounded-circle"  alt="Cinque Terre" >
+					             	</a>
+								</div>
+								<div class="col-sm-9" style="margin-top:30px">
+								        <p style="margin-left:5px;">Announce something to classes</p>
+							    </div>
+						 
+						  </div>
+							<div class="col-sm-2  " style="text-align:right">
+								<a href="#"  >
+						   		 <i class='fas fa-ellipsis-v ' style='font-size:24px;color:black;margin-top:10px;' data-bs-toggle="modal" data-bs-target="#myModal"></i>
+						   		</a>
+							</div>
+					   </div>
+				    </div>
+<!-- 			    //hide part -->
+			       <div class="leftright singlepostpart">
+<!-- 			       th:action="@{/assignmentsinglepost}" -->
+			         <form  id="singlepostdata"   method="POST"enctype="multipart/form-data" > 
+			         
+						 <div id="admintextareafirst" style="display:none;margin-bottom:50px;margin-top:50px;margin-left:50px;">
+							   <div class="dropdown">
+								  <button class="btn btn-secondary dropdown-toggle"  style="padding:20px;border-radius:10px" role="button" id="dropdownMenuLinkclass" data-bs-toggle="dropdown" aria-expanded="false">
+								    Select Class
+								  </button>
+							     
+							       <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" th:object="${classdata}" >
+							       	 <li ><input type="checkbox" class="classname" name="classname" disabled th:value="${name}" checked  th:text="${name}"/> <br /></li>
+							          <li style="display:none" ><input type="checkbox" class="classname" name="classname"  th:value="${name}" checked  th:text="${name}"/> <br /></li>
+								     <li th:each="classdata: ${classdata}" th:if="${classdata.name != name}" ><input type="checkbox" onclick="classnamepart()" class="classname" name="classname" th:value="${classdata.name}" th:text="${classdata.name}" /> <br /></li>
+								  </ul>
+							  </div>
+							   <div class="dropdown">
+								  <button class="btn btn-secondary dropdown-toggle"  style="padding:20px;border-radius:10px" role="button" id="dropdownMenuLinkatudent" data-bs-toggle="dropdown" aria-expanded="false">
+								    Select Student
+								  </button>
+								
+								   <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" th:object="${namedata}" >
+								    <li th:each="namedata: ${namedata}"><input type="checkbox" class="studentname" name="studentname" checked th:value="${namedata.email}" th:text="${namedata.name}"/> <br /></li>
+								  </ul>
+							 </div>
+						 </div>
+						  <div style="display:none;" id="admintextareasecond">
+						   <textarea name="admintextarea" id="admintextarea1" cols="30" rows="10" ></textarea>
+						 </div>
+						  <div id="admintextareathird" style="display:none;margin-left:50px;"  class="container mt-3 ">
+						  <div class="row">
+						  <div class="col-sm-8" style="background-color:gray">
+								       <div  id="workAss" class="workdiv" >
+						
+						
+					                    </div>
+								       <div style="text-align:center">
+									 	<label for="file-uploadAss" th:class="custom-file-upload">
+									    <i  style=" ">Upload File</i> 
+									    </label>
+									    <input th:id="file-uploadAss" class="file" multiple name='file'  type="file" style="display:none; ">
+									    <input th:id="filestring"  name='filestring'  type="text" style="display:none; " />
+									 	</div>									 	
+								  </div>
+						  
+				         </div>
+				         <div style="margin-top:10px ;width:60%;text-align:center">
+				          <input type="text" th:value="${useremail}" style="display:none" name="useremail"  th:id="useremail" />
+						  <input type="password" th:value="${userpassword}" style="display:none" name="userpassword" th:id="userpassword" />
+						  <button class="btn" th:id="post" type="submit"  style="background-color:green;height:30px;">Post</button>
+						  </div>
+				     
+			            </div>
+			           </form>
+	                </div>
+	              <div style="width:100% "th:each="item,status: ${fourfile}"  th:switch="${item.worktype}">
+
 	                    <div th:case="assignmentfile">
 	                     <div th:if="${status.index == 0 or item.title != fourfile[status.index - 1].title}" >
 	                       <div class="headpaert"  >
@@ -11,10 +210,10 @@
 							             	</a>
 										</div>
 										<div class="col-sm-9" style="margin-top:30px">
-										        <p style="margin-left:45px;"  th:text="${item.title}" ></p>
-										        
+										        <p style="margin-left:45px;"  th:utext="${item.title}" ></p>
+
 									    </div>
-								 
+
 								  </div>
 									<div class="col-sm-2  " style="text-align:right">
 										<a href="#"  >
@@ -26,9 +225,34 @@
 	                     </div>
 	                    </div>
 	                    <div th:case="classpost">
-	                     
-					          <p style="margin-left:45px;" th:if="${status.index == 0 or item.body == fourfile[status.index - 1].body}"  th:utext="${item.body}" ></p>
-	                     
+	                     <div th:if="${status.index == 0 or item.body != fourfile[status.index - 1].body}" >
+	                       <div class="headpaert"  >
+							    <div id="announce" class="row"style="margin-top:50px;border:1px solid gray;padding-top:5px;padding-bottom:5px;border-radius:10px" >
+								   <div class="col-sm-10 row" >
+										<div class="col-sm-3">
+											<a target="#" href="#">
+							   			 	<img th:src="@{/image/frnd.jpg}" style="margin-left:0px" class="rounded-circle"  alt="Cinque Terre" >
+							             	</a>
+										</div>
+										<div class="col-sm-9" style="margin-top:30px;" th:utext="${item.body}">
+
+									    </div>
+
+								  </div>
+									<div class="col-sm-2  " style="text-align:right">
+										<a href="#"  >
+								   		 <i class='fas fa-ellipsis-v ' style='font-size:24px;color:black;margin-top:10px;' data-bs-toggle="modal" data-bs-target="#myModal"></i>
+								   		</a>
+									</div>
+							   </div>
+						    </div>
+	                     </div>
+
+
 	                   </div>		  
-	               
+
 	               </div>
+               </div>
+
+           </div>
+        </div> 
